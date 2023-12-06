@@ -1,0 +1,58 @@
+#Deploy config for component
+---
+apiVersion: v3
+deployments:
+  - deploy:
+      region:
+      namespace:
+      technology:
+      podName:
+      image:        #See Field description          
+      runAsUser:
+      replicas: 1
+      labels:
+          project:
+          version:
+      resources:
+        requests:
+          cpu:
+          memory:
+        limits:
+          cpu:
+          memory:
+      volumeMounts:
+        - name: 
+          mountPath:
+      volumes:
+        - name: 
+          persistentVolumeClaim:
+            claimName: 
+      ports:
+        - containerPort:
+          protocol:
+      env:
+        - name:
+          value:
+      secrets_env:
+        - secretRef:
+            name:
+      configmaps_env            # Configmap section
+        - configMapRef:         #
+            name:               #
+      configmaps_mount:         #
+        - mountName:            #
+          mountPath:            #
+          readonly:             #
+          configmapName:        #
+services:
+  - service:
+      region:
+      name:
+      namespace:
+      selector:
+        app_name:
+        deploymentconfig:
+      ports:
+        protocol:
+        port:
+        targetPort:

@@ -1,0 +1,24 @@
+apiVersion: v2
+deploys:
+  - deploy:
+      region: cibd1weuaksdevopscrit003
+      namespace: dharma
+      podName: dharma-django-interfaz
+      technology: python
+      replicas: 1
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+services:
+  - service:
+      region: cibd1weuaksdevopscrit003 
+      name: dharma-django-interfaz-service
+      namespace: dharma       
+      selector:
+         app_name: dharma-django-interfaz
+         deploymentconfig: dharma-django-interfaz
+      ports:
+        - name: dharma-django-interfaz-port
+          protocol: TCP
+          port: 8080
+          targetPort: 8080

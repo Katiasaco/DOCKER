@@ -4,11 +4,282 @@ deploys:
       region: cibd1weuaksdevopscrit003
       namespace: dharma
       podName: dharma-django-interfaz
-      technology: python
+      technology: pythtechnologyon
       replicas: 1
       ports:
         - containerPort: 8080
           protocol: TCP
+      env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: AWS_SECRET_ACCESS_KEY
+        - name: AWS_S3_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: AWS_S3_ENDPOINT
+        - name: AWS_S3_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: AWS_S3_BUCKET
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DB_NAME
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DB_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DB_PASSWORD
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DB_PORT
+        - name: CHANGE_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CHANGE_REMOTE_IN
+        - name: INCIDENT_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: INCIDENT_REMOTE_IN
+        - name: INCIDENT_CHANGE_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: INCIDENT_CHANGE_REMOTE_OUT
+        - name: INCIDENT_CHANGE_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: INCIDENT_CHANGE_REMOTE_METRIC
+        - name: INCIDENT_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: INCIDENT_REMOTE_OUT
+        - name: CHANGE_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CHANGE_REMOTE_OUT
+        - name: INCIDENT_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: INCIDENT_REMOTE_METRIC
+        - name: CHANGE_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CHANGE_REMOTE_METRIC
+        - name: CONTINUOUS_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CONTINUOUS_REMOTE_IN
+        - name: CONTINUOUS_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CONTINUOUS_REMOTE_OUT
+        - name: CONTINUOUS_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CONTINUOUS_REMOTE_METRIC
+        - name: DATA_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DATA_REMOTE_IN
+        - name: DATA_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DATA_REMOTE_OUT
+        - name: DATA_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DATA_REMOTE_METRIC
+        - name: PRODUCT_MGMT_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PRODUCT_MGMT_REMOTE_IN
+        - name: PRODUCT_MGMT_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PRODUCT_MGMT_REMOTE_OUT
+        - name: CONTINUOUS_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CONTINUOUS_REMOTE_METRIC
+        - name: CONTINUOUS_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CONTINUOUS_REMOTE_METRIC
+        - name: PRODUCT_MGMT_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PRODUCT_MGMT_REMOTE_METRIC
+        - name: VUL_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: VUL_REMOTE_IN
+        - name: VUL_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: VUL_REMOTE_OUT
+        - name: VUL_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: VUL_REMOTE_METRIC
+        - name: SOFTWARE_ENG_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: SOFTWARE_ENG_REMOTE_IN
+        - name: SOFTWARE_ENG_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: SOFTWARE_ENG_REMOTE_OUT
+        - name: SOFTWARE_ENG_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: SOFTWARE_ENG_REMOTE_METRIC
+        - name: PFP_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PFP_REMOTE_IN
+        - name: PFP_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: VUL_REMOTE_OUT
+        - name: VUL_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PFP_REMOTE_OUT
+        - name: PFP_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PFP_REMOTE_METRIC
+        - name: OBS_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: OBS_REMOTE_IN
+        - name: OBS_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: OBS_REMOTE_OUT
+        - name: OBS_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: OBS_REMOTE_METRIC
+        - name: TEAM_CUL_REMOTE_IN
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: TEAM_CUL_REMOTE_IN
+        - name: TEAM_CUL_REMOTE_OUT
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: TEAM_CUL_REMOTE_OUT
+        - name: TEAM_CUL_REMOTE_METRIC
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: TEAM_CUL_REMOTE_METRIC
+        - name: CHANGE_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CHANGE_REMOTE_LOGS
+        - name: INCIDENT_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: INCIDENT_REMOTE_LOGS
+        - name: PRODUCT_MGMT_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PRODUCT_MGMT_REMOTE_LOGS
+        - name: SOFTWARE_ENG_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: SOFTWARE_ENG_REMOTE_LOGS
+        - name: TEAM_CUL_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: TEAM_CUL_REMOTE_LOGS
+        - name: OBS_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: OBS_REMOTE_LOGS
+        - name: PFP_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: PFP_REMOTE_LOGS
+        - name: VUL_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: VUL_REMOTE_LOGS
+        - name: DATA_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: DATA_REMOTE_LOGS
+        - name: CONTINUOUS_REMOTE_LOGS
+          valueFrom:
+            secretKeyRef:
+              name: dharma-django-interfaz-secrets
+              key: CONTINUOUS_REMOTE_LOGS
 services:
   - service:
       region: cibd1weuaksdevopscrit003 
